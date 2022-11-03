@@ -1,0 +1,130 @@
+*{
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* Pseudo class: classes which do not occur in HTML, yet are used in CSS */
+
+/* (:) */
+
+/* :hover, :focus, :first-of-type, :last-of-type, :first-child, :last-child, :nth-of-type, :nth-child
+
+:first-line, :first-letter, :has, :is, :not */
+
+
+/* 
+ul li{
+  color: pink;
+} */
+
+/* ul li:nth-of-type(4){
+  color: pink;
+} */
+
+/* ul li:nth-of-type(7){
+  color: red;
+} */
+
+/* ol li:nth-of-type(7){
+  color: red;
+} */
+
+/* ul li:first-of-type{
+  font-size: 2rem;
+} */
+
+/* ul li:first-child{
+  font-size: 2rem;
+}
+ul li:last-child{
+  font-size: 2rem;
+} */
+
+/* ul li:nth-child(3){
+  color: green
+} */
+
+ul li:nth-of-type(2n){
+  color: red;
+}
+ul li:nth-of-type(2n + 1){
+  color: green;
+}
+
+ul{
+  margin: 1rem 0;
+}
+
+/* ul:first-of-type li:nth-of-type(4){
+  font-weight: bold;
+  font-size: 1.5rem;
+} */
+
+/* ul li a:nth-of-type(3){
+  color: red;
+  text-decoration: none;
+} */
+
+/* ul li:nth-of-type(3) a{
+  color: red;
+  text-decoration: none;
+}
+
+
+p::first-line{
+  color: red;
+}
+
+p::first-letter{
+  font-size: 2rem;
+} */
+
+
+/* p:hover{
+  color: red;
+  background-color: black;
+  padding: 1rem;
+  border: solid;
+  border-radius: 1rem;
+} */
+
+input:focus{
+  border-radius: 0.25rem;
+  border: 2px solid black;
+}
+
+/* 
+-names
+-hexadecimal codes
+-rgb value
+-rgba value 
+*/
+
+/* Allowed chars: 0,1,2,3,4,5,6,7,8,9,a,b,c,d,e,f */
+/* Either 6 chars 0r 3 after # */
+
+/* 
+  #ff0000 : Red = #f00
+  #00ff00: Green = #0f0
+  #0000ff: Blue = #00f
+  #000000: black = #000
+  #ffffff: white = #fff
+*/
+
+
+/* RGB VALUE */
+
+/* - rgb()
+- Allowed chars: 0,1,2,3.....255 */
+
+/* Red: rgb(255,0,0)
+Green: rgb(0,255,0)
+BLue: rgb(0,0,255)
+Black: rgb(0,0,0)
+White: rgb(255,255,255) */
+
+
+body{
+  background-color: rgba(255,0,0, 0);
+}

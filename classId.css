@@ -1,0 +1,55 @@
+/* class & ID both are attribute used to make any HTML tag unique, or stand out */
+
+/* 
+  One class, one page, as many times
+  One id, one page, one time
+*/
+
+/* 
+  One tag, one id
+  One tag, as many classes 
+*/
+
+/* ID is denoted by (#)
+Class is denoted by (.) */
+
+
+/* p{
+  color: red;
+}
+#greenColor{
+  color: green;
+}
+.green{
+  color: green;
+}
+.big{
+  font-size: 30px;
+}
+.thick{
+  font-weight: bold;
+} */
+
+/* id > class > tagname */
+
+/* LAST COMES FIRST */
+
+
+/* #red{
+  color: red;
+} */
+.blue{
+  color: blue;
+}
+.brown{
+  color: brown;
+}
+.purple{
+  color: purple;
+}
+.orange{
+  color: orange;
+}
+/* p{
+  color: yellow;
+} */

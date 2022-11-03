@@ -1,0 +1,22 @@
+*{
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+/* .ball{
+  width: 300px;
+  height: 300px;
+  background-color: red;
+  border-radius: 50%;
+} */
+
+/* content-box: */
+/* box model states that the actual dimensions: width + padding + border + margin */
+
+/* border-box: the actual dimensions: (width + padding + border) + margin */
+
+
+.box{
+  width: 50vw;
+  border: 1px solid;
+}

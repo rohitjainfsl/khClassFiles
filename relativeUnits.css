@@ -1,0 +1,31 @@
+/* fixed units: px, pt, cm, in */
+
+/* Relative Units: em, rem, %, vh & vw, vmin, vmax */
+
+/* 16px = 1rem = 1em = 100% */
+
+/* em: takes its values from the parent element. 
+If no parent element is there, or the parent does not have the property set, em will be set Ccording to the root element(html)
+*/
+
+/* rem: takes its values from the root element.(html) */
+
+*{
+  margin: 0;
+  padding: 0;
+}
+
+html{
+  font-size: 24px;
+}
+
+#parent{
+  font-size: 10px;
+  border: 2px solid;
+  width: 50vw;
+}
+
+p{
+  font-size: 1em;
+  width: 500px;
+}

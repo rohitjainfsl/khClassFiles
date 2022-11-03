@@ -1,0 +1,46 @@
+/*
+Position property is used to place an element in the web page at our place of choosing.
+
+Position has 4 values: static(default), fixed, absolute & relative, sticky.
+
+Position:fixed: element is fixed on the webpage & is taken out of the flow of the page. Counting starts from body origin(0,0).
+
+Position:relative: element is not fixed on the webpage  & is not taken out of the flow of the page. Counting starts from the original position of the element & not from body origin.
+
+Position:absolute: element is not fixed on the webpage  & is taken out of the flow of the page.
+Counting starts from:
+    - body origin, if no previous element is positioned.
+    - if a previous element is positioned, from that element.
+
+With position, overlapping comes in. To manage overlapping, we use property: z-index.
+
+With position property, we can use 4 new properties: left, top, bottom and right.
+
+*/
+
+*{
+  margin: 0;
+  padding: 0;
+}
+
+/* h1{
+  border: 3px solid #369;
+  background-color: #369;
+  color: #fff;
+  position: relative;
+  top: 100px;
+  width: 100%;
+} */
+
+
+#parent{
+  padding: 3rem;
+  border: 2px solid;
+  position: relative;
+}
+#child{
+  padding: 1.5rem;
+  border: 2px dotted;
+  position: absolute;
+  top: 100px;
+}

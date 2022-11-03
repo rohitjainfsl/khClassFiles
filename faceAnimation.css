@@ -1,0 +1,80 @@
+*{
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+body{
+  background: #2196f3;  /* fallback for old browsers */
+background: -webkit-linear-gradient(to right, #f44336, #2196f3);  /* Chrome 10-25, Safari 5.1-6 */
+background: linear-gradient(to right, #f44336, #2196f3); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+
+}
+#face {
+  height: 200px;
+  width: 200px;
+  position: relative;
+  background-color: pink;
+  border-radius: 50%;
+  -webkit-animation: face 4s linear;
+  -moz-animation: face 4s linear;
+  -o-animation: face 4s linear;
+  animation: face 4s linear;
+}
+
+#face div{
+  position: absolute;
+  border-radius: 50%;
+}
+.leftEyeBrow, .rightEyeBrow{
+  width: 30px;
+  height: 10px;
+  border: none;
+  border-top: 1px solid;
+}
+.leftEyeBrow {
+  left: 40px;
+  top: 40px;
+  animation: winkEyebrow 1s 4s linear;
+}
+.rightEyeBrow {
+  left: 134px;
+  top: 40px;
+}
+
+.leftEye, .rightEye{
+  width: 20px;
+  height: 30px;
+  border: 1px solid;
+  top: 54px;
+}
+.leftEye{
+  left: 44px;
+  animation: wink 1s 4s linear;
+}
+.rightEye{
+  left: 140px;
+}
+
+@keyframes face {
+  0%{
+    left: 0; transform: rotate(0);
+  }
+  50%{
+    left: calc(100% - 200px); transform: rotate(180deg);
+  }
+  100%{
+    left: 0; transform: rotate(0);
+  }
+}
+
+@keyframes wink {
+  0%{height: 30px; top: 54px;}
+  50%{height: 0; top: 81px;}
+  100%{height: 30px; top: 54px;}
+}
+
+@keyframes winkEyebrow {
+  0%{top: 40px; border-radius: 50%;}
+  50%{top: 67px; border-radius: 10%;}
+  100%{top: 40px; border-radius: 50%;}
+}

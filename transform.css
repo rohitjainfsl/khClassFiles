@@ -1,0 +1,30 @@
+*{
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+/* Transform: translate, scale, rotate, skew */
+/* translate: to move an element */
+
+/* 2d transforms: without axis name
+3d transforms: when we write the values with axis name */
+
+.box{
+  width: 120px;
+  height: 120px;
+  background-color: red;
+  margin: 3rem;
+  /* transform: translate(100px, 400px); */
+  /* transform: translate(300px); */
+  /* transform: translate(0,300px); */
+  /* transform: translateY(300px); */
+  /* transform: translateX(300px); */
+
+  /* transform: rotate(18deg); */
+  /* transform: rotateX(); */
+
+  /* transform: scale(0.5,1); */
+
+  transform: skew(-45deg);
+}
+

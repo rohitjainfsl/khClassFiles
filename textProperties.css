@@ -1,0 +1,41 @@
+/* text-align: left | right | center | justify */
+/* text-decoration: none | underline | overline | line-through */
+
+/* p{
+  text-align: justify;
+  text-decoration: none;
+}
+h1{
+  text-align: center;
+}
+
+a{
+  text-decoration: none;
+} */
+
+ul{
+  /* list-style-type: circle;
+  list-style-image: url(assets/images/marker.png);
+  list-style-position: inside; */
+
+  /* list-style: circle inside url(assets/images/marker.png); */
+}
+
+/* Fixed Units: px
+
+Variable Units: %, rem, em, vh & vw, vmin, vmax  */
+
+p{
+  font-size: 32px;
+  /* font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif; */
+  font-style: italic;
+  font-weight: bold;
+}
+
+body{
+  background: #f857a6;  /* fallback for old browsers */
+background: -webkit-linear-gradient(to right, #ff5858, #f857a6);  /* Chrome 10-25, Safari 5.1-6 */
+background: linear-gradient(to right, #ff5858, #f857a6); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+font-family: 'Open Sans', sans-serif;
+
+}
