@@ -1,0 +1,259 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="tabs.css">
+  <title>Tabs</title>
+</head>
+
+<body>
+  <div id="wrapper">
+    <div class="tabs">
+      <a href="" class="active">HTML</a>
+      <a href="">CSS</a>
+      <a href="">JS</a>
+      <a href="">Node</a>
+      <a href="">React</a>
+    </div>
+    
+    <div class="content">
+      <div class="con active" id="html">
+        <h2>HTML</h2>
+        <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Harum dignissimos odio quos neque laborum iste vero praesentium, quis molestias. Voluptatibus fugit eveniet sed voluptatum totam dicta quia minus voluptas numquam?</p>
+      </div>
+      <div class="con" id="css">
+        <h2>CSS</h2>
+        <p>Placeat quae eaque doloribus. Fugiat nisi accusantium voluptatum voluptates nam eos eius est, optio, maiores, error quas modi aperiam alias? Voluptatum aspernatur sit, similique numquam debitis vero corrupti ad est?</p>
+      </div>
+      <div class="con" id="js">
+        <h2>JS</h2>
+        <p>Nesciunt, repellat. Ipsa, iure distinctio amet voluptatibus eos, veniam veritatis vero obcaecati quibusdam quisquam itaque. Illum fugit ad, dolore consectetur asperiores aperiam recusandae, ab ullam nemo vitae quia harum? At?</p>
+      </div>
+      <div class="con" id="node">
+        <h2>Node</h2>
+        <p>Obcaecati, iste consequuntur eos rerum exercitationem ipsam numquam modi reprehenderit totam, quia velit architecto id ab earum quo. Velit perferendis error veritatis molestiae corrupti? Itaque, consequuntur possimus. Veniam, placeat nulla!</p>
+      </div>
+      <div class="con" id="react">
+        <h2>React</h2>
+        <p>Obcaecati, iste consequuntur eos rerum exercitationem ipsam numquam modi reprehenderit totam, quia velit architecto id ab earum quo. Velit perferendis error veritatis molestiae corrupti? Itaque, consequuntur possimus. Veniam, placeat nulla!</p>
+      </div>
+    </div>
+    
+    <!-- <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Minus sequi commodi, unde illo rerum dolore deserunt amet cumque, repudiandae nobis dolorem assumenda. Ab modi sed voluptates repudiandae, molestias similique voluptatem.</p> -->
+
+
+    <!-- <a href="https://twitter.com">Twitter</a> -->
+
+  </div>
+
+
+
+  <script>
+
+    // function sum(a=1,b=1){
+    //   return (a+b)
+    // }
+    // console.log(sum(10, 10));
+
+    // let a = sum(10);
+    // console.log(a)
+
+    // sum();
+
+    //ANONYMOUS FUNCTION
+
+    //IIFE: Immidiately Invoked Function Expression
+
+    // document.querySelector("button").onclick = function(){
+    //   document.write(10)
+    // }
+
+    // const printNumber = function(){
+    //   document.write(11)
+    // }
+
+    // printNumber();
+
+    // document.querySelector("button").onclick = () => {
+    //   document.write(10)
+    // }
+
+    // const printNumber = () => {
+    //   document.write(11)
+    // }
+
+
+    // let para = document.querySelector("p")
+
+    // para.onmouseover = function(){
+    //   this.style.color = "#f00"
+    // }
+    // para.onmouseout = function(){
+    //   this.style.color = "#000"
+    // }
+
+    // para.onmouseover = (e) => {
+    //   // console.log(event)
+    //   e.target.style.color = "#f00"
+    // }
+    // para.onmouseout = (e) => {
+    //   // console.log(event)
+    //   e.target.style.color = "#000"
+    // }
+
+
+    // const anchor = document.querySelector("a")
+
+    // anchor.onclick = (e) => {
+    //   e.preventDefault();
+    //   console.log("Elon Musk")
+    // }
+    
+
+    // NO PROPERTY / EVENT WORKS DIRECTLY WITH A COLLECTION OF ELEMENTS
+
+    
+    const anchors = document.querySelectorAll("a")
+    console.log(anchors)
+
+
+    // anchors.onclick = (e) => {
+    //   e.preventDefault();
+    //   console.log("Happy Weekend")
+    // }
+
+
+    // for(let i=0;i<anchors.length;i++){
+    //   anchors[i].onclick = (e) => {
+    //     e.preventDefault();
+    //     console.log("Happy Weekend")
+    //   }
+    // }
+
+    // anchors.forEach((current, index) => {
+    //   current.onclick = (e) => {
+    //     e.preventDefault()
+    //     console.log("Happy Weekend")
+    //   }
+    // })
+
+    // add, remove, toggle, replace, contains
+
+
+    anchors.forEach((current) => {
+      current.onclick = (e) => {
+        e.preventDefault()
+
+        // anchors.forEach((current) => {
+        //   if(current.classList.contains("active")){
+        //     current.classList.remove("active")
+        //   }
+        // })
+
+        document.querySelector('.tabs .active').classList.remove('active');
+
+        e.target.classList.add("active")
+
+        const clickedAnchorText = e.target.innerHTML.toLowerCase(); //react 
+
+        const conDivs = document.querySelectorAll(".con")
+
+        conDivs.forEach((current) => {
+          if(current.classList.contains("active")){
+            current.classList.remove("active")
+          }
+        })
+
+        conDivs.forEach((current) => {
+          if(current.getAttribute("id") === clickedAnchorText){
+            current.classList.add("active")
+          }
+        })
+      }
+    })
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    // console.log(document.querySelectorAll("a"))
+    // let html = document.querySelector("a:nth-of-type(1)");
+    // let css = document.querySelector("a:nth-of-type(2)");
+    // let js = document.querySelector("a:nth-of-type(3)");
+    // let node = document.querySelector("a:nth-of-type(4)");
+    // let react = document.querySelector("a:nth-of-type(5)");
+
+
+    // let html = document.querySelectorAll("a")[0];
+    // let css = document.querySelectorAll("a")[1];
+    // let js= document.querySelectorAll("a")[2];
+    // let node= document.querySelectorAll("a")[3];
+    // let react = document.querySelectorAll("a")[4];
+
+
+
+    // html.onclick = function(){}
+    // css.onclick = function(){}
+    // js.onclick = function(){}
+    // node.onclick = function(){}
+    // react.onclick = function(){}
+
+    // console.log(anchors)
+
+    // for(let i=0;i<anchors.length;i++){
+    //   anchors[i].onclick = function(e){
+    //     e.preventDefault();
+    //     document.querySelector("p").innerHTML = anchors[i].innerText
+    //   }
+    // }
+    // let anchors = document.querySelectorAll("a")
+
+    // for (let i = 0; i < anchors.length; i++) {
+    //   anchors[i].onclick = function (e) {
+    //     e.preventDefault();
+    //     for (let j = 0; j < anchors.length; j++) {
+    //       if (anchors[j].classList.contains("active")) {
+    //         anchors[j].classList.remove("active")
+    //       }
+    //     }
+    //     anchors[i].classList.add("active")
+
+
+    //     let text = anchors[i].innerHTML.toLowerCase()
+
+    //     let conDivs = document.querySelectorAll(".con")
+
+    //     for(let i=0;i<conDivs.length;i++){
+    //       if(conDivs[i].classList.contains("active")){
+    //         conDivs[i].classList.remove("active")
+    //       }
+    //     }
+
+    //     for(let i=0;i<conDivs.length;i++){
+    //       if(conDivs[i].id === text){
+    //         conDivs[i].classList.add("active")
+    //       }
+    //     }
+
+
+    //   }
+    // }
+
+
+
+  </script>
+</body>
+
+</html>

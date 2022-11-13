@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Traversing Elements</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css"
+    integrity="sha512-xh6O/CkQoPOWDdYTDqeRdPCVd1SpvCA9XXcUnZS2FmJNp1coAFzvtCN9BmamE+4aHK8yyUHUSCcJHgXloTyT2A=="
+    crossorigin="anonymous" referrerpolicy="no-referrer" />
+  <link rel="stylesheet" href="traversing.css">
+</head>
+
+<body>
+  <div id="wrapper">
+    <div id="boxes">
+      <div class="box">
+        <div class="heading">
+          <h1>Box 1 <i class="fa-solid fa-chevron-down"></i></h1>
+        </div>
+        <div class="content">
+          <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Molestiae obcaecati, quos, ipsum sit consectetur
+            necessitatibus sunt voluptatibus culpa doloribus quasi ut? Voluptates, earum? Sint similique sit voluptatem
+            laudantium maiores soluta.</p>
+            <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Nulla aspernatur, facere nostrum natus id hic. Ad quasi voluptatum, magnam aut libero incidunt aliquid pariatur sapiente molestiae quo minus similique ab!</p>
+        </div>
+      </div>
+
+      <div class="box">
+        <div class="heading">
+          <h1>
+            Box 2
+            <i class="fa-solid fa-chevron-down"></i>
+          </h1>
+        </div>
+        <div class="content">
+          <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Molestiae obcaecati, quos, ipsum sit consectetur
+            necessitatibus sunt voluptatibus culpa doloribus quasi ut? Voluptates, earum? Sint similique sit voluptatem
+            laudantium maiores soluta.</p>
+            <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Vero, repudiandae deleniti. Quasi ut, facere molestiae perspiciatis accusantium numquam magnam laboriosam quia laudantium deleniti eligendi, reprehenderit esse nostrum, est asperiores sunt.</p>
+        </div>
+      </div>
+
+      <div class="box">
+        <div class="heading">
+          <h1>Box 3 <i class="fa-solid fa-chevron-down"></i></h1>
+        </div>
+        <div class="content">
+          <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Molestiae obcaecati, quos, ipsum sit consectetur
+            necessitatibus sunt voluptatibus culpa doloribus quasi ut? Voluptates, earum? Sint similique sit voluptatem
+            laudantium maiores soluta.</p>
+            <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Voluptatum ipsa excepturi reprehenderit quidem libero exercitationem? Necessitatibus dolorum quo quos eligendi perspiciatis placeat itaque perferendis ullam quis eveniet! Molestiae, earum eos?</p>
+        </div>
+      </div>
+
+      <div class="box">
+        <div class="heading">
+          <h1>Box 4 <i class="fa-solid fa-chevron-down"></i></h1>
+        </div>
+        <div class="content">
+          <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Molestiae obcaecati, quos, ipsum sit consectetur
+            necessitatibus sunt voluptatibus culpa doloribus quasi ut? Voluptates, earum? Sint similique sit voluptatem
+            laudantium maiores soluta.</p>
+            <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Voluptatum ipsa excepturi reprehenderit quidem libero exercitationem? Necessitatibus dolorum quo quos eligendi perspiciatis placeat itaque perferendis ullam quis eveniet! Molestiae, earum eos?</p>
+        </div>
+      </div>
+    </div>
+  </div>
+  <script>
+    const icons = document.querySelectorAll(".heading i")
+
+    icons.forEach((icon) => {
+      icon.onclick = (e) => {
+        // console.log(e.target.parentElement.parentElement.nextElementSibling.children)
+
+        const paragraphs = e.target.parentElement.parentElement.nextElementSibling.children
+
+        // console.log(paragraphs)
+
+        // Both HTMLCollection and NodeList seem like arrays. However, Nodelist is much closer to an actual array. HTMLCollection is not.
+
+        // To use array methods on HTMLCollection, we have to convert it to an actual array
+
+
+
+        // paragraphs.forEach((paragraph) => {
+        //   paragraph.style.border = "solid"
+        // })
+
+
+        Array.from(paragraphs).forEach((paragraph) => {
+          paragraph.style.border = "solid"
+        })
+
+        // closest(), find()
+
+
+
+      }
+    })
+
+  </script>
+</body>
+
+</html>
