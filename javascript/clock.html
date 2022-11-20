@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Clock</title>
+</head>
+
+<body>
+  <div id="wrapper">
+    <p class="clock"></p>
+  </div>
+
+  <script>
+    // let day = Date.getDay()
+    // console.log(day)
+
+    setInterval(() => {
+      let dt = new Date()
+      const day = dt.getDay()
+      const date = dt.getDate()
+      const month = dt.getMonth() + 1
+      const year = dt.getFullYear()
+      const hours = dt.getHours()
+      const minutes = dt.getMinutes()
+      const seconds = dt.getSeconds()
+
+      document.querySelector(".clock").innerHTML = `${day}, ${date} / ${month} / ${year} ${hours} : ${minutes} : ${seconds}`
+    }, 1000)
+
+
+    // console.log(new Date('18 November 2022 21:00'))
+
+    // console.log(new Date().getTime())
+
+  </script>
+</body>
+
+</html>

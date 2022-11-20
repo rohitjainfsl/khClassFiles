@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Random Color Generator</title>
+</head>
+<body>
+  <div id="wrapper">
+    <input type="text" placeholder="Press the Button">
+    <button>Generate a Color</button>
+  </div>
+
+  <script>
+    const button = document.querySelector("button")
+    button.onclick = () => {
+      let color = '#'
+      let allowedChars = '0123456789abcdef'
+      // let allowedCharsArray = allowedChars.split('')
+
+      for(let i=0;i<6;i++){
+        color += allowedChars[Math.floor(Math.random() * 16)]
+      }
+
+      document.body.style.backgroundColor = color
+      document.querySelector("input").value = color
+    }
+  </script>
+</body>
+</html>

@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Random Names from Array</title>
+</head>
+
+<body>
+  <div id="wrapper">
+    <p></p>
+  </div>
+  <script>
+    const names = ['Ram', 'Shyam', 'Seeta', 'Geeta', 'Raman', 'Chaman']
+    let alreadyIncluded = []
+
+    let curr = -1;
+    let counter = 0;
+    const getRandomVal = () => {
+      let prev = curr;
+      curr = Math.floor(Math.random() * names.length);
+
+      if (prev === curr) {
+        return getRandomVal();
+      } else {
+        return curr;
+      }
+    }
+
+    let interval = setInterval(() => {
+      if (counter === names.length - 1){
+        clearInterval(interval)
+      }
+      let randomIndex = getRandomVal()
+      // document.write(names[randomIndex] + "<br>")
+
+      document.write(names[randomIndex].split('').reverse().join('') + "<br>")
+      counter++
+    }, 1000)
+      
+    
+
+    // function getARandomValue(){
+    //   let random = Math.floor(Math.random() * names.length)
+
+    //   if(alreadyIncluded.includes(random)){
+    //     return getARandomValue();
+    //   }
+    //   else{
+    //     alreadyIncluded.push(random)
+    //     return random;
+    //   }
+    // }
+
+    
+
+
+  </script>
+</body>
+
+</html>
