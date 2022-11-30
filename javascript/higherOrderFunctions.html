@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>HOF</title>
+</head>
+
+<body>
+  <div id="wrapper">
+
+  </div>
+  <script>
+    let numbers = [1, 44, 23, 7, 26, 87, 99, 101, 100]
+    // let output = []
+
+    // numbers.forEach((number) => {
+    //   output.push(number * number)
+    // })
+    // console.log(output)
+
+
+    // let output = numbers.map((number) => {
+    //   return number * number
+    // })
+    // console.log(output)
+    // console.log(numbers)
+
+
+    // let output = numbers.filter((number) => {
+    //   return number > 50
+    // })
+    // console.log(output)
+
+
+    // let sum = numbers.reduce((previous, current) => {
+    //   return previous + current;
+    // })
+    // console.log(sum)
+
+
+    // const animals = ['ant', 'bison', 'camel', 'duck', 'elephant'];
+
+    // console.log(animals.slice(2, -1));
+
+
+
+    const user =
+      `id, first_name,last_name,email,gender
+1,priya,vyas,priya0@nsw.gov.au,female
+2,jyoti,vyas,jyoti25@mac.com,female
+3,karan,dadhich, krndadhich265@typepad.com,male
+4,deepak,vyas,dvyas362@amazonms.com,male`;
+
+    const csvToArray = (csv) => {
+      let output = [];
+      for (const row of csv.split('\n')) {
+        output.push(row.split(','));
+
+      }
+      return output;
+    };
+
+    const convertToObj = (arr) => {
+      let output = [];
+      arr.forEach((elem, index) => {
+        if (index !== 0) {
+          let obj = {};
+          elem.forEach((elem, index) => {
+            obj[arr[0][index]] = elem
+          });
+          output.push(obj);
+        }
+      });
+      return output;
+
+    };
+    let csvToObj = convertToObj(csvToArray(user));
+    console.log(csvToObj);
+
+
+
+    let names = ['Vikas', 'Jyoti', 'Abhay', 'Burhan']
+
+    // for(let i=0;i<names.length;i++){
+    //   document.write(names[i] + "<br>")
+    // }
+
+    names.forEach((current, index) => {
+      console.log(current, index)
+    })
+
+    
+
+
+
+
+
+  </script>
+</body>
+
+</html>
