@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Object Oriented Programming</title>
+</head>
+<body>
+  <div id="wrapper">
+
+  </div>
+  <script>
+    // class is a collection of variables and functions
+    // object: is a gateway through which we can access all of class' properties
+
+    //constructors are functions which gets invoked automatically whenever we create an object of a class
+
+    class Person{
+      
+      // let name = 'Javascript'
+
+      constructor(fn, ln){
+        // console.log("Constructor called");
+        let firstname = fn;
+        let lastname = ln;
+
+        console.log(firstname, lastname)
+      }
+
+      hello(){
+        console.log( `Hello How are you!!` );
+      }
+
+      sum(a,b){
+        return a + b
+      }
+    }
+
+
+    const ob1 = new Person('John', 'Doe')
+    const ob2 = new Person('Jane', 'Doe')
+    const ob3 = new Person('Ram', 'Prasad')
+
+
+    // const ob1 = new Person()
+    // console.log(ob1.hello('John'))
+
+    // const ob2 = new Person()
+    // console.log(ob2.hello('Jane'))
+
+
+    
+    // this is right
+    // const obj = new Person()
+    // const obj2 = new Person()
+    // const obj3 = new Person()
+
+    // this is wrong
+    // const obj = new Person()
+    // const obj = new Person2()
+
+    // console.log(obj.hello())
+
+    // console.log(obj.sum(10,20))
+
+    // console.log(obj.name)
+
+  </script>
+</body>
+</html>

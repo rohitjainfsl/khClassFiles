@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Drag & Drop</title>
+  <link rel="stylesheet" href="drag&Drop.css">
+</head>
+<body>
+  <div id="wrapper">
+    <div class="photos drag">
+      <div id="one" draggable="true"></div>
+      <div id="two" draggable="true"></div>
+      <div id="three" draggable="true"></div>
+      <div id="four" draggable="true"></div>
+    </div>
+    <div class="photos drop"></div>
+  </div>
+
+  <script>
+    const photos = document.querySelectorAll(".drag div")
+    photos.forEach((photo) => {
+      photo.ondragstart = (e) => {
+        // console.log(e.dataTransfer)
+        // const photoId = photo.getAttribute("data-id")
+        const photoId = photo.id
+        e.dataTransfer.setData('text/plain', photoId) //MIME Type
+        console.log("drag")
+      }
+    })
+
+    const drop = document.querySelector(".drop")
+
+    
+    drop.ondragenter = (e) => {
+      // console.log("inside drop div")
+
+      drop.classList.add("dashedBorder")
+    }
+
+    drop.ondragleave = () => {
+      // console.log("outside drop div")
+      drop.classList.remove("dashedBorder")
+    }
+
+    drop.ondragover = (e) => {
+      e.preventDefault();
+    }
+
+    drop.ondrop = (e) => {
+      // console.log("dropped")
+      const photoId = e.dataTransfer.getData('text/plain');
+      const newImage = document.createElement("div")
+      newImage.setAttribute("id", photoId)
+      drop.appendChild(newImage)
+
+      drop.classList.remove("dashedBorder")
+    }
+
+
+
+
+  </script>
+</body>
+</html>
