@@ -31,9 +31,19 @@ WINTER 😱 IS 😱 COMING!
 */
 
 
-// console.log(panic("Hello")); //HELLO!
-// console.log(panic("I'm almost out of coffee")); //I'M 😱 ALMOST 😱 OUT 😱 OF 😱 COFFEE!
-// console.log(panic("winter is coming")) 
+    // console.log(panic("Hello")); //HELLO!
+    // console.log(panic("I'm almost out of coffee")); //I'M 😱 ALMOST 😱 OUT 😱 OF 😱 COFFEE!
+    // console.log(panic("winter is coming")) 
+
+    function panic(input) {
+      return (input.includes(" "))
+        ? input.replace(/ /g, " 😱 ").toUpperCase() + "!"
+        : input.toUpperCase() + "!"
+    }
+
+    console.log(panic("Hello"));
+    console.log(panic("I'm almost out of coffee"));
+    console.log(panic("winter is coming"))
 
   </script>
 </body>

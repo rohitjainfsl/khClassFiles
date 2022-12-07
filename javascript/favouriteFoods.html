@@ -1,11 +1,13 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Favourite Foods</title>
 </head>
+
 <body>
   <div id="wrapper">
     <section id="meals"></section>
@@ -26,11 +28,15 @@ For breakfast, I only like croissants 🥐. For lunch, I love pasta 🍝,
 and for supper I want usually want pizza 🍕.
 */
 
-const faveFoods = {
-    breakfast: '',
-    lunch: '',
-    supper: ''
-}
+    const faveFoods = {
+      breakfast: 'poha',
+      lunch: 'roti',
+      supper: 'salad'
+    }
+    const { breakfast, lunch, supper } = faveFoods
+    const mealsSection = document.querySelector("#meals")
+    mealsSection.innerHTML = `<p>For breakfast, I only like ${breakfast} 🥐. For lunch, I love ${lunch} 🍝, and for supper I want usually want ${supper} 🍕.</p>`
   </script>
 </body>
+
 </html>
