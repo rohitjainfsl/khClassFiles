@@ -1,0 +1,231 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Call, Bind & Apply</title>
+</head>
+
+<body>
+  <div id="wrapper"></div>
+  <script>
+
+
+
+    // CALL: The call() method calls the function with a given this value and arguments provided individually.
+
+    // const person = {
+    //   fullname: 'Rohit',
+    //   age: 20,
+
+    // }
+
+    // function whoIsIt () {
+    //   return 'Fullname ' + this.fullname + ' and age ' + this.age;
+    // }
+
+
+    // // console.log(whoIsIt()) //this will return undefined
+
+    // console.log(whoIsIt.call(person))
+
+
+
+
+
+    //Function Constructor
+
+    // call with Function constructor
+
+    // function Person(fullname, age) {
+    //   this.fullname = fullname
+    //   this.age = age
+    // }
+
+    // function WhoIsIt(n, a) {
+    //   Person.call(this, n, a);
+    // }
+
+    // console.log(new WhoIsIt('Rohit', 32).fullname) //Rohit
+
+
+    // console.log(new WhoIsIt('Rohit', 32).age) //32
+
+
+
+
+
+
+    // const marks = [34,2,5,7,10,11,36, 3]
+
+    // console.log(Math.max.apply(null, marks))
+    // console.log(Math.min.apply(null, marks))
+
+
+    //CALL and APPLY are identical, with the only difference that CALL accepts arguments as a comma sepearated list, while APPLY accepts arguments as an array
+
+    //EXAMPLE: 
+    //func.call(this, 1,2)
+    //func.apply(this, [1,2])
+
+
+
+
+
+
+
+    //BIND: The BIND method creates a new function that, when called, has its this keyword set to the provided value.
+    // The BIND function creates a new bound function. Calling the bound function generally results in the execution of the function it wraps, which is also called the target function.
+
+
+
+    const person = {
+      age: 20,
+      getAge: function () {
+        return this.age
+      }
+    }
+
+    // console.log(person.getAge()) //20
+
+    const wrong = person.getAge; //this does not point to person, it points to the Window object
+
+    // console.log(wrong()) // UNDEFINED
+
+    const right = wrong.bind(person)
+
+    // console.log(right());
+
+
+
+
+
+
+
+    //NULLISH COALESCENCE: is a short way of writing inline OR statements.
+    //If the LHS is null or undefined, return the RHS value, else return the LHS value.
+
+
+    // if(null){
+    //   console.log(null)
+    // }
+    // else{
+    //   console.log("Javascript")
+    // }
+
+
+    // console.log(null || 'Javascript')
+
+
+
+    // console.log(null ?? 'Javascript')
+
+    // console.log(undefined ?? 'Hello')
+
+    // console.log(1 ?? 2)
+
+    // console.log(false ?? true);
+
+    // console.log(NaN ?? 'Burhan');
+
+
+
+
+    //OPTIONAL CHAINING: is a short way to write if and else
+
+
+    const students = [
+      {
+        fullname: 'Vikas',
+        address: {
+          city: 'some city',
+          state: 'some state'
+        }
+      },
+      {
+        fullname: 'Burhan'
+      }
+    ]
+
+
+    // printStudentData(students);
+
+    // function printStudentData(arr){
+    //   arr.forEach(student => {
+    //     console.log(student.fullname)
+    //     if(student.address){
+    //       console.log(student.address)
+    //     }
+    //     else console.log('NA')
+    //   });
+    // }
+
+
+    // function printStudentData(arr) {
+    //   arr.forEach(student => {
+    //     console.log(student.fullname)
+    //     console.log(student?.address ? student.address : 'NA')
+    //   });
+    // }
+
+
+
+
+    // Setting up environment variable allows us to run Node from anywhere in our system
+
+
+    //Webpack is a module bundler which:
+    // - bundles all the necessary modules into a single package/bundle
+    // - resolves all the dependancies conflict
+    // - minifies the modules to strip out unecessary codes to make the file size smaller
+    
+
+
+    //Babel converts our code containing newest features of JS, and converts it into such a code that older version of browsers also understand.
+
+
+
+    // (student?.address)
+
+    // if(student.address !== null)
+
+
+
+    // document.write(<h1>Hello World</h1>)
+
+
+
+
+      // Difference between Library & Framework
+
+      // Library is just the absolute core files with no extra features.
+
+      // Framework contains the core files as well as some added functionalities.
+    
+
+    
+    // Installing react wit CRA: npx create-react-app learnreact
+
+    // Difference between npm & npx
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  </script>
+</body>
+
+</html>
