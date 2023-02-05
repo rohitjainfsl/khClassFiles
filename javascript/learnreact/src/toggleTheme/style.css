@@ -1,0 +1,40 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+.fullscreen {
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+form {
+  padding: 3rem;
+  border-radius: 0.5rem;
+  box-shadow: 1px 1px 3px 3px rgba(0, 0, 0, 0.5);
+  width: 50vw;
+  margin-bottom: 2rem;
+}
+form input,
+form button {
+  padding: 0.5rem;
+  margin: 0.25rem;
+  border: 2px solid #d4d4d4;
+  border-radius: 0.5rem;
+  width: 100%;
+}
+form button {
+  cursor: pointer;
+}
+.dark {
+  background-color: #000;
+}
+.dark form {
+  background-color: #fff;
+  box-shadow: 1px 1px 3px 3px rgba(255, 255, 255, 0.5);
+}
+.dark label{
+    color: #fff;
+}

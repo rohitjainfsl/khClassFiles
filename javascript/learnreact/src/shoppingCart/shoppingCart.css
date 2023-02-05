@@ -1,0 +1,19 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+.products{
+    display: flex;
+    flex-wrap: wrap;
+    margin: 2rem;
+}
+.products .product{
+    width: 23%;
+    margin: 1%;
+    height: 300px;
+}
+.products .product img{
+    width: 100%;
+    height: 200px;
+}
