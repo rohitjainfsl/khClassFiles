@@ -1,0 +1,16 @@
+html 
+    head 
+        title= pageTitle
+        link(rel="stylesheet" href="")
+
+    body
+        .container 
+            h1#titleHeading= pageHeading
+            #user-nav 
+                h3#username= "Welcome "+ userName
+                a(href="/users/logout")= buttonText
+
+            #post-content
+                include posts.pug
+
+
