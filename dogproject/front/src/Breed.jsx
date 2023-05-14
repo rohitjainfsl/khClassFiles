@@ -2,40 +2,64 @@ import axios from "axios";
 import React, { useEffect, useState } from "react";
 
 function Breed() {
-  const [userSelectedValue, setUserSelectedValue] = useState("");
+  const [breedList, setBreedList] = useState([]);
+  const [image, setImage] = useState("");
 
-  const [breedList, setBreedList] = useState([])
+  function handleBreedList() {
+    axios.get("http://localhost:8000/api/breed-list").then((result) => {
+      let array = [];
+      for (const el in result.data) {
+        if (result.data[el].length > 0) {
+          for (const data of result.data[el]) {
+            array.push(data + "-" + el);
+          }
+        } else {
+          array.push(el);
+        }
+      }
+
+      setBreedList(array);
+    });
+  }
 
   useEffect(() => {
-    axios
-      .get("http://localhost:8000/api/breed-list")
-      .then((result) => {
-        console.log(result.data)
-      });
+    handleBreedList();
   }, []);
 
-  useEffect(() => {
+  function handleChange(e) {
     axios
-      .post("http://localhost:8000/api/random-dog-image", {
-        breed: userSelectedValue,
+      .post("http://localhost:8000/api/breed-dog-image", {
+        breed: e.target.value,
       })
       .then((result) => {
-        console.log(result);
+        setImage(result.data.message);
       });
-  }, [userSelectedValue]);
-
-  function handleChange(e) {
-    setUserSelectedValue(e.target.value);
   }
 
   return (
     <div>
       <h2>Select A Breed</h2>
       <select onChange={handleChange}>
-        {
-          
-        }
+        {breedList?.map((breed) => {
+          return (
+            <option key={breed} value={breed.split("-")[1]}>
+              {breed.split("-").join(" ")}
+            </option>
+          );
+        })}
       </select>
+
+      <br />
+      {image ? (
+        <img
+          src={image}
+          alt="image"
+          width={500}
+          style={{ marginTop: "20px" }}
+        />
+      ) : (
+        <p>No Image</p>
+      )}
     </div>
   );
 }
