@@ -1,0 +1,23 @@
+{
+  "name": "testing",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "type": "module",
+  "scripts": {
+    "test": "jest"
+  },
+  "author": "Rohit Jain",
+  "license": "ISC",
+  "dependencies": {
+    "axios": "^1.4.0",
+    "jest-puppeteer": "^9.0.0",
+    "puppeteer": "^20.4.0"
+  },
+  "devDependencies": {
+    "@babel/core": "^7.22.1",
+    "@babel/preset-env": "^7.22.2",
+    "babel-jest": "^29.5.0",
+    "jest": "^29.5.0"
+  }
+}
